@@ -18,7 +18,7 @@ export default function AcceptAdminInvitePage() {
 
   useEffect(() => {
     if (!token) {
-      setStatus.receive("error")
+      setStatus("error")
       setMessage("Invalid invite link")
       return
     }
@@ -40,7 +40,7 @@ export default function AcceptAdminInvitePage() {
         setStatus("error")
         setMessage(
           err.response?.data?.error ||
-            "Invite expired or invalid"
+          "Invite expired or invalid"
         )
       }
     }
