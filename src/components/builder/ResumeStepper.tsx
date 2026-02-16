@@ -12,9 +12,11 @@ import { Check } from "lucide-react"
 export default function ResumeStepper({
   currentStep,
   onStepChange,
+  orientation = "horizontal",
 }: {
-  currentStep: BuilderStep
-  onStepChange: (step: BuilderStep) => void
+  currentStep?: any
+  onStepChange?: any
+  orientation?: "vertical" | "horizontal"
 }) {
   const { resume } = useResume()
 
@@ -46,8 +48,8 @@ export default function ResumeStepper({
                 isComplete
                   ? "border-green-500 bg-green-500 text-white"
                   : isActive
-                  ? "border-primary bg-primary text-white"
-                  : "border-muted-foreground text-muted-foreground"
+                    ? "border-primary bg-primary text-white"
+                    : "border-muted-foreground text-muted-foreground"
               )}
             >
               {isComplete ? <Check size={12} /> : null}
